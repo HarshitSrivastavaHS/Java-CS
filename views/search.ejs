@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Searched for <%= searchQuery %></title>
+    <%- include("common") %>
+  </head>
+  <body>
+    <%- include('navbar') %>
+    <div class="mx-auto my-4" style="width: 85%">
+    <% if (searchResults.length > 0 && searchQuery !== '') { %>
+        <h5>Search Results:</h5>
+        <ul class="list-group mx-auto">
+          <% searchResults.forEach((program, index) => { %>
+            <a class="link-dark text-decoration-none" href="/program/<%= program.id %>">
+              <li  class="list-group-item d-flex justify-content-between align-items-center  <%- index%2==0?'bg-body-tertiary':''%>">
+                <%- program.name.replace(/\\n/g, "<BR>") %>
+              <span class="badge bg-primary rounded-pill"><%- program.years.join(", ") %></span>
+              </li>
+            </a>
+          <% }); %>
+        </ul>
+      <% } else if (searchResults.length === 0 && searchQuery !== '') { %>
+        <p>No programs found.</p>
+        <div class="card-footer text-body-secondary my-3">
+          <a href="/" class="btn btn-primary mx-auto mb-5">Return to home page</a>
+        </div> 
+      <% } else { %>
+        You did not search for anything. 
+        <div class="card-footer text-body-secondary my-3">
+          <a href="/" class="btn btn-primary mx-auto mb-5">Return to home page</a>
+        </div> 
+       <% } %>
+      %>
+    </div>   
+  </body>
+</html>

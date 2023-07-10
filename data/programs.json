@@ -1,0 +1,9 @@
+[
+    {
+      "id": 1,
+      "years":[2014],
+      "name": "A sequence of fibonacci strings is generated as follows:\\nS0=\"a\", S1=\"b\", Sn=S(n-1)+S(n-2)\\nwhere + denotes concatenation. Thus the sequence is:\\n a, b, ba, bab, babba, babbabab, ..., n terms.\\nDesign a class FiboString to generate fibonacci strings.",
+      "solution": "data/programSolutions/1.txt"
+    }
+  ]
+  

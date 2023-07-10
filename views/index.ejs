@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Java CS</title>
+    <%- include("common") %>
+  </head>
+  <body>
+    <%- include('navbar') %>
+    <h4 class="mx-auto my-4" style="width: 85%; text-align: justify;">Solutions to Java Programs asked in ISC Computer Examination.</h4>
+    
+    <div id="recent" class="mx-auto mb-4" style="width: 85%;">
+      <div class="card card-body bg-gradient bg-primary w-100 mb-3 mx-auto">
+        <h5 class="card-header text-white">Recently Added Programs</h5>
+        <ul class="list-group list-group-flush">
+          <% recent.forEach((program, index)=>{%>
+            <a class="link-dark text-decoration-none" href="/program/<%=program.id%>">
+            <li class="list-group-item d-flex justify-content-between align-items-center <%- index%2==0?'bg-body-tertiary':''%>"><%- program.name.replace(/\\n/g, '<br>')%>
+              <span class="badge bg-primary rounded-pill"><%- program.years.join(", ")%></span>
+            </li>
+            </a>
+          <%})%>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="mx-auto" style="width: 85%;">
+      <h5>Programs by Examination Year:</h5>
+        <% keys.slice(0,3).forEach((key) => { %>
+          <h2><a data-bs-target="#collapseExample<%=key%>" class="mx-auto card card-header bg-gradient btn bg-warning" data-bs-toggle="collapse" role="button" href="/year/<%=key%>"><%- key %></a></h2>
+          <div class="collapse" id="collapseExample<%=key%>">
+            <div class="card card-body bg-gradient bg-primary w-100 mb-3 mx-auto">
+              <ul class="list-group list-group-flush">
+                <% year[key].slice(0,5).map((programID, index)=>{ 
+                  let program = programs.find((programData)=>programData.id == programID);%>
+                  <a class="text-decoration-none link-dark" href="/program/<%=programID%>">
+                  <li class="list-group-item <%- index%2==0?'bg-body-tertiary':''%>"><%- program.name.replace(/\\n/g, '<br>')%></li>
+                  </a>
+                <% }) 
+                if (year[key].length > 5) { %>
+                  <li class="list-group-item"><a class="link-dark btn btn-secondary text-white" href="/year/<%=key%>">View all</a></li>
+                <% } %>
+              </ul>
+            </div>
+          </div>
+        <% }); %>
+        
+      <% if (keys.length > 3) {%>
+        <div class="card-footer text-body-secondary">
+          <a href="/year" class="btn btn-primary mx-auto mb-5">All Years</a>
+        </div> 
+      <%}%>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Years</title>
+    <%- include("common") %>
+  </head>
+  <body>
+    <%- include('navbar') %>
+    <div class="mx-auto my-4" style="width: 85%">
+      <h4>Programs by Examination Year</h4>
+      <ul class="list-group mx-auto">
+        <% years.map((year, index)=>{%>
+          <a class="text-decoration-none link-dark" href="/year/<%=year%>">
+          <li class="list-group-item d-flex justify-content-between align-items-center <%- index%2==0?'bg-body-tertiary':''%>">
+            <%- year %>
+            <span class="badge bg-primary rounded-pill"><%- programs[year].length%></span>
+          </li>
+          </a>
+        <% }) %>
+      </ul>
+    </div>
+  </body>
+</html>
+

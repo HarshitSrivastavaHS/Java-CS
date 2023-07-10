@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class FiboString {
+    String x, y, z;
+    int n;
+    FiboString() {
+        x = "a";
+        y = "b";
+        z = "ba";
+        n = 0;
+    }
+    void accept() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number of terms: ");
+        n = sc.nextInt();
+        sc.close();
+    }
+    void generate() {
+        int i = 0;
+        while (i<n) {
+            System.out.println(x);
+            x = y;
+            y = z;
+            z = y + x;
+            i++;
+        }
+    }
+    public static void main(String[]args) {
+        FiboString obj = new FiboString();
+        obj.accept();
+        obj.generate();
+    }
+}

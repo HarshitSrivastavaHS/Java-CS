@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= program.name %></title>
+    <%- include("common") %>
+    <link rel="stylesheet" href="/css/prism.css">
+    <script src="/js/prism.js"></script>
+  </head>
+  <body>
+    <%- include('navbar') %>
+
+    <div class="card mx-auto border-dark my-4" style="width: 85%;">
+      <h5 class="card-header"><%- program.name.replace(/\\n/g, '<br>') %></h5>
+      <div class="card-body">
+        <h5 class="card-title"><pre><code class="language-java"><%= solution %></code></pre></h5>
+        <p class="card-text">Question asked in ISC <%- program.years.join(", ")  %></p>
+      </div>
+    </div>
+  </body>
+</html>
+
