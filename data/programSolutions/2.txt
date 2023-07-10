@@ -1,0 +1,37 @@
+import java.util.Scanner;
+public class NumDude {
+    int num;
+    NumDude() {
+        num = 0;        //initialising num as 0;
+    }
+    void input() {      //to take input from the user
+        Scanner sc = new Scanner(System.in);        
+        System.out.print("Enter a positive number: ");
+        num = sc.nextInt();
+        sc.close();
+    }
+    int sumDigits(int x) {
+        int sum = x%10;
+        if (x!=0) {
+            return sum += sumDigits(x/10);      //recursive case
+        }
+        else {
+            return sum;     //base case. when the number is 0;
+        }
+    }
+
+    void isDude() {
+        int sumOfDigits = sumDigits(num);
+        int cube = (int) Math.pow(sumOfDigits, 3);      // the cube of the sum of the digits of num
+        if (cube == num)
+            System.out.println(num +" is a Dudeney Number.");
+        else 
+            System.out.println(num +" is not a Dudeney Number.");
+    }
+
+    public static void main(String[]args) {
+        NumDude obj = new NumDude();        
+        obj.input();
+        obj.isDude();
+    }
+}

@@ -2,29 +2,29 @@ import java.util.Scanner;
 public class FiboString {
     String x, y, z;
     int n;
-    FiboString() {
+    FiboString() {      // initialising the variables.
         x = "a";
         y = "b";
         z = "ba";
         n = 0;
     }
-    void accept() {
+    void accept() {     //input from the user.
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the number of terms: ");
-        n = sc.nextInt();
+        n = sc.nextInt();   // number of terms 
         sc.close();
     }
     void generate() {
-        int i = 0;
+        int i = 0;  // counter for terms
         while (i<n) {
-            System.out.println(x);
-            x = y;
-            y = z;
-            z = y + x;
-            i++;
+            System.out.println(x);      // printing the value of x
+            x = y;      // changing x as y. for 1st iteration: x = "b"
+            y = z;      // changing y as z. for 1st iteration: y = "ba"
+            z = y + x;      // changing z as y+x. for 1st iteration: z = "ba"+"b" = "bab"
+            i++;    // incrementing the counter by 1
         }
     }
-    public static void main(String[]args) {
+    public static void main(String[]args) {     // main method
         FiboString obj = new FiboString();
         obj.accept();
         obj.generate();
