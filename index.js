@@ -5,6 +5,8 @@ const port = 3000;
 
 const fs = require("fs")
 const programsData = require('./data/programs.json');
+const programsDataInReverse = [...programsData];
+programsDataInReverse.reverse();
 const req = require("express/lib/request");
 
 app.set('view engine', 'ejs')
@@ -13,7 +15,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.render('index', { programs: programsData, year: programsByYear , keys: sortedKeys , active: "home", recent: programsData.toReversed().slice(0,4)});
+    res.render('index', { programs: programsData, year: programsByYear , keys: sortedKeys , active: "home", recent: programsDataInReverse.slice(0,4)});
   });
 
 app.get('/program/:id', (req, res) => {
