@@ -55,10 +55,6 @@ app.get("/year/:id", (req, res)=>{
     }
 })
 
-app.get("/wakeup", function(request, response) {
-    response.send("i'm awake")
-});
-
 app.get('/*', (req, res)=> {
     res.status(404).render("404", {active: ""});
 })

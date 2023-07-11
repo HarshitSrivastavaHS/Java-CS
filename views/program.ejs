@@ -10,7 +10,15 @@
     <%- include('navbar') %>
 
     <div class="card mx-auto border-dark my-4" style="width: 85%;">
-      <h5 class="card-header"><%- program.name.replace(/\\n/g, '<br>') %></h5>
+      <h5 class="card-header  d-flex justify-content-between align-items-center" style="flex-direction: column;"><%- program.name.replace(/\\n/g, '<br>') %>
+        <% if (program.img!=null) {%>
+          <a href="/questions/<%=program.img%>" target="_blank">
+            <span class="mt-2 badge bg-primary rounded-pill">
+              Click Here to View Question
+            </span>
+          </a>
+        <% } %>
+      </h5>
       <div class="card-body">
         <h5 class="card-title"><pre><code class="language-java"><%= solution %></code></pre></h5>
         <p class="card-text">Question asked in ISC <%- program.years.join(", ")  %></p>
