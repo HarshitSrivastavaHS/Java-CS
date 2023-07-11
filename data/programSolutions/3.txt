@@ -1,0 +1,65 @@
+import java.util.Scanner;
+public class Trans {
+    int arr[][], m;     // declaring the globar variables 
+    Trans(int mm) {
+        m = mm;
+        arr = new int[m][m];    // instantiating the array.
+    }
+    void fillarray() {
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i<m; i++) {
+            for (int j = 0; j<m; j++) {
+                System.out.print("Enter the element ("+i+","+j+"): ");   // accepting input in the array. 
+                arr[i][j] = sc.nextInt();
+            }
+        }
+    }
+    void transpose() {      
+        // Transposing without the use of a third array.
+        for (int i = 0; i<m; i++){
+            for (int j = i; j<m; j++){
+                int temp = arr[j][i];
+                arr[j][i] = arr[i][j];
+                arr[i][j] = temp;
+            }
+        }
+
+        /*
+            Transposing using a second array
+        
+            int transpose[][] = new int[m][m];
+            for (int i = 0; i<m; i++) {
+                for (int j = 0; j<m; j++) {
+                    transpose[j][i] = arr[i][j];
+                }
+            } 
+            arr = transpose;    // replacing the original array with the transposed array.
+        */
+    }
+    void display() {
+        // printing the original matrix
+        System.out.println("Original matrix: ");
+        for (int i = 0; i<m; i++) {
+            for (int j = 0; j<m; j++)
+                System.out.print(arr[i][j]+"\t");
+            System.out.println();
+        }
+        //transposing;;
+        transpose();
+        // printing the transposed matrix
+        System.out.println("Transposed matrix: ");
+        for (int i = 0; i<m; i++) {
+            for (int j = 0; j<m; j++)
+                System.out.print(arr[i][j]+"\t");
+            System.out.println();
+        }
+    }
+    public static void main(String[]args){
+        Scanner sc = new Scanner(System.in); 
+        // accepting the size of the matrix from the user;
+        System.out.print("Enter the size of the square matrix: ");
+        Trans obj = new Trans(sc.nextInt());
+        obj.fillarray(); // calling fillarray()
+        obj.display();      // calling display() to display the array;
+    }
+}
