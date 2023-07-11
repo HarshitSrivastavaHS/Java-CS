@@ -14,7 +14,7 @@
     {
       "id": 3,
       "years":[2023],
-      "name": "A class Trans is defined to find the transpose of a square matrix. A transpose of a matrix is obtained by interchanging the elemtns of the rows and columns.",
+      "name": "A class Trans is defined to find the transpose of a square matrix. A transpose of a matrix is obtained by interchanging the elements of the rows and columns.",
       "solution": "data/programSolutions/3.txt"
     }
   ]
