@@ -16,9 +16,16 @@
     {
       "id": 3,
       "years":[2023],
-      "img": "3.png",
+      "img": "3.jpg",
       "name": "A class Trans is defined to find the transpose of a square matrix. A transpose of a matrix is obtained by interchanging the elements of the rows and columns.",
       "solution": "data/programSolutions/3.txt"
+    },
+    {
+      "id": 4,
+      "years":[2013],
+      "img": "4.jpg",
+      "name": "A class Exchange accepts a sentence and interchange the first alphabet with the last alphabet for each word in the sentence, with single letter the word remains unchanged. The words in the input sentece are separed by a single blank space and terminated by a full stop.",
+      "solution": "data/programSolutions/4.txt"
     }
   ]
   

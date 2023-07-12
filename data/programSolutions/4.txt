@@ -1,0 +1,46 @@
+import java.util.Scanner;
+import java.util.StringTokenizer;
+class Exchange { 
+   String sent, rev;	// declaring the gloabal variables
+   int size;
+   Exchange() {		// initialising the variables with default values
+   	sent = "";
+   	rev = "";
+   	size = 0;
+   }
+   void readsentence() {
+   	// accepting the input from the user.
+   	Scanner sc = new Scanner(System.in);
+   	System.out.print("Enter the sentence: ");
+   	sent = sc.nextLine();
+   	// storing the number of characters of sent in size;
+   	size = sent.length();
+   	sc.close();
+   }
+   void exfirstlast() {
+   	// creating an object of the StringTokenizer to extract words
+   	StringTokenizer st = new StringTokenizer(sent.substring(0, size-1)); // using substring to get the sentence till the second last letter. since the last letter is a full stop.
+   	while(st.hasMoreTokens()) {
+   		String word = st.nextToken();
+   		if (word.length()>1) {	// if word has more than 1 character
+   			// exchanging the first and last letter of the word.
+   			String w = word.charAt(word.length()-1) + word.substring(1, word.length()-1) + word.charAt(0);
+   			rev += w +" ";
+   		}
+   		else {
+   			// adding the same word if it is one character long.
+   			rev += word + " ";
+   		}
+   	}	
+   	rev = rev.trim()+"."; // removing the extra space and readding the full stop.
+   }
+   void display() {
+   	System.out.println("Original Sentence: "+sent+"\nNew Sentence: "+rev);	// displaying the sentences.
+   }
+   public static void main(String[]args) { // main method
+   	Exchange obj = new Exchange();
+   	obj.readsentence();
+   	obj.exfirstlast();
+   	obj.display();
+   }
+}
