@@ -41,6 +41,10 @@ app.get("/about", (req, res)=> {
     res.render("about", { active: "about"})
 })
 
+app.get("/all", (req, res)=>{
+    res.render("all", {programs: programsData, active: "all"})
+})
+
 app.get("/year", (req, res)=>{
     res.render("years", {years: sortedKeys, programs: programsByYear , active: "years"})
 })

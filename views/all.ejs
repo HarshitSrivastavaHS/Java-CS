@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>All Programs</title>
+    <%- include("common") %>
+  </head>
+  <body>
+    <%- include('navbar') %>
+    <div class="mx-auto my-4" style="width: 85%">
+      <h4>All Programs</h4>
+      <ul class="list-group mx-auto">
+         <% programs.map((program, index)=>{ %>
+            <a class="link-dark text-decoration-none" href="/program/<%=program.id%>">
+            <li class="list-group-item d-flex justify-content-between align-items-center  <%- index%2==0?'bg-body-tertiary':''%>">
+            <%- program.name.replace(/\\n/g, "<BR>") %>
+            </li>
+            </a>
+        <% }) %>
+      </ul>
+    </div>
+    <ul>
+       
+    </ul>
+  </body>
+</html>
