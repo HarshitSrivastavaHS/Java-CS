@@ -1,0 +1,37 @@
+import java.util.Scanner; 
+class Revstr {
+	String Str, Revst;	// declaring global variables
+	Revstr() {	// initializing the global variables with default values
+		Str = "";
+		Revst = "";
+	}
+	void getStr() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the sentece: ");
+		Str = sc.nextLine();	// Accepting a line from the user.
+		sc.close();
+	}
+
+	// First value of i is length()-1 of the original string. 
+	void recReverse(int i) {
+		// base condition: Till i is greater than or equal to 0;
+		if (i >= 0) {
+			Revst += Str.charAt(i); // adding the character at i to the reversed string
+			recReverse(i-1);	// calling the function with i-1
+		} else {
+			return;		// program will work without else, but still adding it.
+		}
+	}
+	void check() {
+		recReverse(Str.length()-1);	// calling the recReverse function with length()-1 value of i.
+		if (Str.equalsIgnoreCase(Revst)) // if String and reverse of the String are equal.
+			System.out.println(Str +" is a palindrome.");
+		else 
+			System.out.println(Str +" is not a palindrome.");
+	}
+	public static void main(String[]args) {
+		Revstr obj = new Revstr();	// creating an object
+		obj.getStr();	// calling getStr() to get input from the user.
+		obj.check();	// calling check() to check if the string is a palindrome or not.
+	};
+}

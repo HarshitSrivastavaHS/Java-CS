@@ -26,8 +26,8 @@
     <div class="mx-auto" style="width: 85%;">
       <h5>Programs by Examination Year:</h5>
         <% keys.slice(0,3).forEach((key) => { %>
-          <h2><a data-bs-target="#collapseExample<%=key%>" class="mx-auto card card-header bg-gradient btn bg-warning" data-bs-toggle="collapse" role="button" href="/year/<%=key%>"><%- key %></a></h2>
-          <div class="collapse" id="collapseExample<%=key%>">
+          <h2><a data-bs-target="#collapse<%=key%>" class="mx-auto card card-header bg-gradient btn bg-warning" data-bs-toggle="collapse" role="button" href="/year/<%=key%>"><%- key %></a></h2>
+          <div class="collapse" id="collapse<%=key%>">
             <div class="card card-body bg-gradient bg-primary w-100 mb-3 mx-auto">
               <ul class="list-group list-group-flush">
                 <% year[key].slice(0,5).map((programID, index)=>{ 

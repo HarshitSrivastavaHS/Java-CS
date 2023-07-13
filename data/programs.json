@@ -26,6 +26,13 @@
       "img": "4.jpg",
       "name": "A class Exchange accepts a sentence and interchange the first alphabet with the last alphabet for each word in the sentence, with single letter the word remains unchanged. The words in the input sentece are separed by a single blank space and terminated by a full stop.",
       "solution": "data/programSolutions/4.txt"
+    },
+    {
+      "id": 5,
+      "years":[2008],
+      "img": "5.jpg",
+      "name": "A class Revstr defines a recursive function to reverse a string and check whether it is a palindrome or not.",
+      "solution": "data/programSolutions/5.txt"
     }
   ]
   
