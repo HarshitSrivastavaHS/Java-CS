@@ -33,6 +33,13 @@
       "img": "5.jpg",
       "name": "A class Revstr defines a recursive function to reverse a string and check whether it is a palindrome or not.",
       "solution": "data/programSolutions/5.txt"
+    },
+    {
+      "id": 6,
+      "years":[],
+      "img": "6.jpg",
+      "name": "Desing a class MidDigit to find the middle digit number. The middle digit number of a number is the one which is exactly in the mid of a given number.",
+      "solution": "data/programSolutions/6.txt"
     }
   ]
   

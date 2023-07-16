@@ -1,0 +1,54 @@
+import java.util.Scanner;
+class MidDigit {
+    int num, midnum;    // global variables
+    MidDigit(int nn) {      // parameterized constructor to set the variables to default values.
+        num = nn;
+        midnum = 0;
+    }
+    int numLen(int p){  // to find and return the number of digits in the number.
+        int c = 0;  // counter for the number of digits
+        while (p!=0){
+            c++;
+            p/=10;
+        }
+        return c;
+    }
+    void midDigit() {
+        int l = numLen(num);    // calling numLen() to get the number of digits in num;
+        midnum = (int)(num/Math.pow(10, l/2-1));    
+        /*
+            Example:
+                num = 12345, l = 5;
+                midnum = (int)(num/Math.pow(10,l/2-1))
+                midnum = (int)(12345/Math.pow(10, 5/2-1))
+                midnum = (int)(12345/Math.pow(10,1))
+                midnum = (int)(12345/10)
+                midnum = 1234
+                Continued below
+        */
+        if (l%2!=0) {
+            midnum/=10;
+            midnum%=10;
+        }
+        else 
+            midnum%=100;
+        /*
+                Continued Here
+                l%2!=0 => 5%2!=0 => 1!=0 true
+                midnum/=10 => midnum = midnum/10; => midnum = 1234/10 = 123;
+                midnum%=10 => midnum = midnum%10 => midnum = 123%10 = 3
+                midnum = 3
+                which is the middle digit in 12345. (For a number with even number of digit, perform the dry run yourself)
+        */
+    }
+    void display() {
+        System.out.println("Middle digit: "+midnum);    // to display the mid digit
+    }
+    public static void main(String[]args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number: ");
+        MidDigit obj = new MidDigit(sc.nextInt());  // creating the object and later calling the functions.
+        obj.midDigit();
+        obj.display();
+    }
+}
