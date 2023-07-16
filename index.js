@@ -15,7 +15,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.render('index', { programs: programsData, year: programsByYear , keys: sortedKeys , active: "home", recent: programsDataInReverse.slice(0,4)});
+    res.render('index', { programs: programsData, year: programsByYear , keys: sortedKeys , active: "home", recent: programsDataInReverse.slice(0,4), extra: extraPrograms});
   });
 
 app.get('/program/:id', (req, res) => {
@@ -39,6 +39,10 @@ app.get('/search', (req, res) => {
 
 app.get("/about", (req, res)=> {
     res.render("about", { active: "about"})
+})
+
+app.get("/extras", (req, res)=>{
+    res.render("extras", {programs: programsData, extra: extraPrograms, active: "extra"})
 })
 
 app.get("/all", (req, res)=>{
@@ -78,6 +82,7 @@ function readSolutionCode(filePath) {
 }
 
 const programsByYear = {};
+const extraPrograms = [];
 
 programsData.forEach((program)=>{
     const {id, years} = program
@@ -89,5 +94,7 @@ programsData.forEach((program)=>{
             programsByYear[year].push(id);
         }
     })
+    if (years.length == 0)
+        extraPrograms.push(id);
 })
 const sortedKeys = Object.keys(programsByYear).sort((a, b) => b - a);

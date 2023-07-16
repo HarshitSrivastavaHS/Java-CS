@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>All Programs</title>
+    <title>Extra Programs</title>
     <%- include("common") %>
   </head>
   <body>
     <%- include('navbar') %>
     <div class="mx-auto my-4" style="width: 85%">
-      <h4>All Programs</h4>
+      <h4>Extra Programs</h4>
       <ul class="list-group mx-auto">
-         <% programs.map((program, index)=>{ %>
+         <% extra.map((program, index)=>{ 
+            program = programs.find((programData)=>programData.id == program);%>
             <a class="link-dark text-decoration-none" href="/program/<%=program.id%>">
             <li class="list-group-item d-flex justify-content-between align-items-center  <%- index%2==0?'bg-body-tertiary':''%>">
-            <%- program.name.replace(/\\n/g, "<BR>") %>
-              <span class="badge bg-primary rounded-pill"><%-program.years.length>0?program.years.join(", "):"Extra"%></span>
+                <%- program.name.replace(/\\n/g, "<BR>") %>
+                <span class="badge bg-primary rounded-pill">Extra</span>
             </li>
             </a>
         <% }) %>

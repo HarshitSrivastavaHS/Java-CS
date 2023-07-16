@@ -21,7 +21,7 @@
       </h5>
       <div class="card-body">
         <h5 class="card-title"><pre><code class="language-java"><%= solution %></code></pre></h5>
-        <p class="card-text">Question asked in ISC <%- program.years.join(", ")  %></p>
+        <p class="card-text"><%-program.years.length>0?`Question asked in ISC ${program.years.join(", ")} `:"Extra Question"%></p>
       </div>
     </div>
   </body>

@@ -57,5 +57,29 @@
         </div> 
       <%}%>
     </div>
+
+    <div id="extra" class="mx-auto mb-4" style="width: 85%;">
+      <div class="card card-body bg-gradient bg-primary w-100 mb-3 mx-auto">
+        <h5 class="card-header text-white">Extra Programs</h5>
+        <ul class="list-group list-group-flush">
+          <% extra.slice(0,3).forEach((program, index)=>{
+            program = programs.find((programData)=>programData.id == program); %>
+            <a class="link-dark text-decoration-none" href="/program/<%=program.id%>">
+            <li class="list-group-item d-flex justify-content-between align-items-center <%- index%2==0?'bg-body-tertiary':''%>"><%- program.name.replace(/\\n/g, '<br>')%>
+              <span class="badge bg-primary rounded-pill">Extra</span>
+            </li>
+            </a>
+          <%})%>
+          <div class="text-body-secondary">
+            <a href="/extras" class="link-dark text-decoration-none mx-auto mb-5">
+              <li class="list-group-item d-flex justify-content-between align-items-center bg-body-tertiary%>">All Extra Programs
+                <span class="badge bg-primary rounded-pill"><%- extra.length%></span>
+              </li>
+            </a>
+          </div>
+        </ul>
+      </div>
+    </div>
+
   </body>
 </html>
