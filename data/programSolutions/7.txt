@@ -1,0 +1,49 @@
+import java.util.Scanner;
+public class CircularPrime {
+
+    int m, n;
+
+    CircularPrime(int m, int n) {
+        this.m = m;     
+        this.n = n;
+    }
+
+    boolean isPrime(int n){     // function to check if n is prime or not.
+        int c = 0;
+        for (int i = 1; i<=n; i++)
+            if (n%i ==0)
+                c++;
+        return c==2;
+    }
+
+    boolean circularPrime(int n) {
+        boolean circular_prime = true;
+        if (n<10) circular_prime = false;   // if n is less then 10, it is not a circular prime.
+        else {
+            String num = Integer.toString(n);
+            int l = num.length();
+            for (int i = 0; i<l; i++) {     // loop to get all the possible numbers. for 123, it would be 123, 231 and 312
+                if (!isPrime(Integer.parseInt(num))){
+                    circular_prime = false;
+                    break;
+                }
+                num = num.substring(1)+num.charAt(0);   // changing the original string
+            }
+        }
+        
+        return circular_prime;  
+    }
+
+    void show() {
+        for (int i = m; i<=n; i++)  // printing all circular primes in range m to n;
+            if (circularPrime(i))
+                System.out.println(i);
+    }
+
+    public static void main(String[]args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the range of numbers: ");
+        CircularPrime obj = new CircularPrime(sc.nextInt(), sc.nextInt());
+        obj.show();
+    }
+}

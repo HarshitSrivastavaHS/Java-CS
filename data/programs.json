@@ -40,6 +40,13 @@
       "img": "6.jpg",
       "name": "Desing a class MidDigit to find the middle digit number. The middle digit number of a number is the one which is exactly in the mid of a given number.",
       "solution": "data/programSolutions/6.txt"
+    },
+    {
+      "id": 7,
+      "years":[],
+      "img": "7.png",
+      "name": "Write a program to print all circular prime numbers from m to n.",
+      "solution": "data/programSolutions/7.txt"
     }
   ]
   
