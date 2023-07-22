@@ -47,6 +47,20 @@
       "img": "7.png",
       "name": "Write a program to print all circular prime numbers from m to n.",
       "solution": "data/programSolutions/7.txt"
+    },
+    {
+      "id": 8,
+      "years":[],
+      "img": "8.png",
+      "name": "Write a program to add two binary numbers.",
+      "solution": "data/programSolutions/8.txt"
+    },
+    {
+      "id": 9,
+      "years":[],
+      "img": "9.png",
+      "name": "Write a program to accept an even integer and print all odd prime pairs whose sum is equal to n. (GoldBach Number)",
+      "solution": "data/programSolutions/9.txt"
     }
   ]
   

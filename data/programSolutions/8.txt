@@ -1,0 +1,39 @@
+import java.util.Scanner;
+public class addBinary {
+    int a, b;
+    addBinary(int a, int b) {
+        this.a = a;     // first binary number
+        this.b = b;     // second binary number
+    }
+    int add() {
+        int ca = a;     // copy of the fist binary number
+        int cb = b;     // copy of the second binary number
+        int s = 0;      // digit wise sum of the two binary numbers
+        int c = 0;      // carry digit after the digit wise sum
+        int bsum = 0;   // the resultant binay number after the addition of a and b
+        int i = 0;      // counter to count the power of 10
+        while (ca!=0||cb!=0||c!=0){     // the loop will run if either of the binary numbers is not zero or the carry is not zero
+            s = (ca%10 + cb%10 + c)%2;  // sum
+            c = (ca%10 + cb%10 + c)/2;  //carry
+            bsum += (int)(Math.pow(10, i)*s);   // resultant binary number
+            ca/=10;     // updating ca, cb and i
+            cb/=10;
+            i++;
+        }
+        return bsum;    // returning the binary number after addition
+    }
+    void show() {
+        System.out.println(a+" + "+b+" = "+add());
+    }
+    public static void main(String[]args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the binary numbers to be added: ");
+        addBinary obj = new addBinary(sc.nextInt(), sc.nextInt());      // creating object of the class
+        obj.show();     // calling the show method
+    }
+}
+
+/*
+    This program doesn't check if a and b are binary numbers or not.
+    For bigger binary numbers, the integer might overflow leading to incorrect output.
+*/ 
