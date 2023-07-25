@@ -1,0 +1,63 @@
+import java.util.Scanner;
+
+public class ArrMix {
+    int a1[], a2[], arranged[], size1, size2; 
+    ArrMix(int m, int n) {  
+        size1 = m;
+        size2 = n;
+        a1 = new int[size1];    //initialising the arrays
+        a2 = new int[size2];
+        arranged = new int[size1+size2];
+    } 
+    void fillarray() {      // to take input in the array1 and array2 from the user.
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the elements of array 1: ");
+        for (int i = 0; i<size1; i++)
+            a1[i] = sc.nextInt();
+        System.out.println("Enter the elements of array 2: ");
+        for (int i = 0; i<size2; i++)
+            a2[i] = sc.nextInt();
+    }
+    void arrange() {
+        int index = 0;      
+        int notSquare1[] = new int[size1], length1 = 0; 
+        // to first add the squares from a1 to arranged and non squares to notSquare1
+        for (int i = 0; i<size1; i++) {
+            int n = a1[i];
+            int sqrt = (int) Math.sqrt(n);
+            if (n == sqrt*sqrt)
+                arranged[index++] = n;
+            else
+                notSquare1[length1++] = n;
+        }
+        // to add the squares from a2 to arranged and non squares to notSquare2
+        int notSquare2[] = new int[size2], length2 = 0; 
+        for (int i = 0; i<size2; i++) {
+            int n = a2[i];
+            int sqrt = (int) Math.sqrt(n);
+            if (n == sqrt*sqrt)
+                arranged[index++] = n;
+            else
+                notSquare2[length2++] = n;
+        }
+        // to add the nonsquares into arranged
+        for (int i = 0; i<length1; i++)
+            arranged[index++] = notSquare1[i];
+        for (int i = 0; i<length2; i++)
+            arranged[index++] = notSquare2[i];
+    }
+    void display() { // displaying
+        System.out.print("Arranged Array: ");
+        for (int i = 0; i<size1+size2; i++) {
+            System.out.print(arranged[i]+" ");
+        }
+    }
+    public static void main(String[]args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the length of the two arrays: ");
+        ArrMix obj = new ArrMix(sc.nextInt(), sc.nextInt());
+        obj.fillarray();
+        obj.arrange();
+        obj.display();
+    }
+}

@@ -61,6 +61,13 @@
       "img": "9.png",
       "name": "Write a program to accept an even integer and print all odd prime pairs whose sum is equal to n. (GoldBach Number)",
       "solution": "data/programSolutions/9.txt"
+    },
+    {
+      "id": 10,
+      "years":[],
+      "img": "10.jpg",
+      "name": "Design a class ArrMix to arrange two single dimensional arrays into one single dimensional array, such that the perfect sqares from both the arrays are at the beginning followed by the non square numbers.",
+      "solution": "data/programSolutions/10.txt"
     }
   ]
   
