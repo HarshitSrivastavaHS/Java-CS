@@ -1,0 +1,25 @@
+import java.util.Scanner;
+class factorial {
+    int n, f; // global variables to store the number and the factorial of the number.
+    factorial() {   //default constructor
+        n = 0; 
+        f = 0;
+    }
+    int fact(int num) {     // recursive method to calculate factorial of a number;
+        if (num == 0)       // base condition, returns 1 when num is 0
+            return 1;
+        else 
+            return num * fact(num-1);   // recursive case to find the recursion using recursive technique
+    }
+    void getFactorial() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        n = sc.nextInt();       // accepting the number from the user.
+        f = fact(n);        // calculating the factorial of the number;
+        System.out.println("The factorial of "+n+" is "+f);     // printing the factorial of the number;
+    }
+    public static void main(String[]args) {
+        factorial obj = new factorial();        // creating an object of the class  
+        obj.getFactorial();     // invoking the method getFactorial.
+    }
+}

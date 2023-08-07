@@ -68,6 +68,32 @@
       "img": "10.jpg",
       "name": "Design a class ArrMix to arrange two single dimensional arrays into one single dimensional array, such that the perfect sqares from both the arrays are at the beginning followed by the non square numbers.",
       "solution": "data/programSolutions/10.txt"
+    },
+    {
+      "id": 11,
+      "years":[],
+      "img": "11.jpg",
+      "name": "Write a program to find the factorial of a number using recursive technique.\\nThe Following is the process of finding factorial of a number: \\nn! = n * (n-1) * (n-2) * ... * 1",
+      "solution": "data/programSolutions/11.txt"
+    },
+    {
+      "id": 12,
+      "years":[],
+      "img": "12.jpg",
+      "name": "Write a class poweris to raise number n to the power m using recursive technique.\\nn = 2, m = 3. n^m = 2^3 = 8",
+      "solution": "data/programSolutions/12.txt"
+    },{
+      "id": 13,
+      "years":[],
+      "img": "13.jpg",
+      "name": "Define a classs Change to convert the case of the characters in it using recursive technique.",
+      "solution": "data/programSolutions/13.txt"
+    },{
+      "id": 14,
+      "years":[2015],
+      "img": "14.jpg",
+      "name": "A class Admission contains admission numbers of 100 students that are already arranged in Ascending order. Write a program to search a particular admission number using recursive technique and return 1 if found otherwise return -1",
+      "solution": "data/programSolutions/14.txt"
     }
   ]
   

@@ -1,0 +1,39 @@
+import java.util.Scanner;
+public class Change {
+    String str, newstr;     // instance variables to store the original and the new string.
+    int len;        // to store the length fo the string str.
+    Change(){       // default constructor 
+        str = newstr = "";
+        len = 0;
+    }
+    void inputword() {      // to accept word in str from the user.
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the word: ");
+        str = sc.next();
+        len = str.length();     // storing the length of the word
+    }
+    char caseconvert(char ch) {
+        if (Character.isUpperCase(ch))
+            return Character.toLowerCase(ch);       // returns lowercase letter if the letter was in uppercase
+        else 
+            return Character.toUpperCase(ch);       // returns uppercase letter if the letter was in lowercase.
+    }
+    void recchange(int l) {
+        if (l == len)       // if the l is equal to the length of the word, it return (base case)
+            return;
+        else {      // recursive case.
+            newstr += caseconvert(str.charAt(l));       // adds the character with opposite case
+            recchange(l+1);     // calls the function again for the next character.
+        }
+    }
+    void display() {
+        recchange(0);       // THE INITIAL VALUE OF L SHOULD ALWAYS BE 0 FOR THIS TO WORK   
+        System.out.println("Original String: "+str+"\nNew String: "+newstr);    // printing the original as well as the new string.
+    }
+
+    public static void main(String[]args){      // main method.
+        Change obj = new Change();      // creating the object
+        obj.inputword();
+        obj.display();
+    }
+}

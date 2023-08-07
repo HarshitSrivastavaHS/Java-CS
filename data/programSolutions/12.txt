@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class poweris {
+    int base, expn;     // to store the number as base and as exponent respectively.
+    double p;       // to store base raise to the power expn;
+    poweris() {     // default constructor.
+            base = expn = 0;
+            p = 0.0;
+    }   
+    int power (int n, int m) {      // method to find n raised to m using recursive technique.
+        if (m == 0)
+            return 1;       // base case to return 1 when exponent is 0;
+        else 
+            return n * power(n, m-1);   // recursive case to raise n to the power of m
+    }
+    void findresults() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the base and teh exponent: ");      // to accept the values of base and expn
+        base = sc.nextInt();
+        expn = sc.nextInt();
+        p = power(base, expn);      // to get n^m using recursive technique
+    }
+    void printresult() {
+        System.out.println(base+" ** "+expn+" = "+p);       // printing
+    }
+    public static void main(String[]args) {     // main method to create the objects 
+        poweris object = new poweris();         // and invoke required methods.
+        object.findresults();
+        object.printresult();
+    }
+}
