@@ -1,9 +1,11 @@
-<!--
+
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <style>
-    body {
-        overflow-x: hidden;
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
     }
 header {
     position: sticky;
@@ -85,8 +87,10 @@ header .search {
 
 header .searchBox {
     position: absolute;
+    transform: scaleX(0);
     right: -100%;
     width: 100%;
+    visibility: hidden;
     height: 100%;
     display: flex;
     background-color: #fff;
@@ -96,6 +100,8 @@ header .searchBox {
 }
 
 header .searchBox.active {
+    transform: scaleX(1);
+    visibility: visible;
     right: 0%;
 }
 
@@ -171,10 +177,12 @@ header .searchBox.active {
         position: absolute;
         opacity: 0;
         visibility: hidden;
+        transform: scale(0);
         left: 100%;
     }
     header {
         position: sticky;
+        transition: .5s ease-in-out;
     }
     header.open {
         position: fixed;
@@ -183,6 +191,7 @@ header .searchBox.active {
         top: 80px;
         opacity: 1;
         visibility: visible;
+        transform: scale(1);
         left: 0;
         display: flex;
         flex-direction: column;
@@ -248,8 +257,9 @@ header .searchBox.active {
       header.classList.toggle('open');
   }
 </script>
--->
 
+
+<!--
 <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">JAVA CS</a>
@@ -281,3 +291,4 @@ header .searchBox.active {
       </div>
     </div>
   </nav>
+-->
