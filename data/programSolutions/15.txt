@@ -9,6 +9,10 @@ class Merger {
         System.out.print("Enter the two numbers: ");
         n1 = sc.nextLong();      // acceping the two numbers
         n2 = sc.nextLong();      // as long
+        if (n1<=0 || n2<=0) {       // if numbers are less than or equal to 0, the program will exit
+            System.out.println("The numbers should be greater than 0.");
+            System.exit(0);
+        }
     }
     void JoinNum() {
         mergNum = Long.parseLong(""+n1+n2);     // concatenating n1 and n2 and converting them to long
