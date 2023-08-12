@@ -94,6 +94,12 @@
       "img": "14.jpg",
       "name": "A class Admission contains admission numbers of 100 students that are already arranged in Ascending order. Write a program to search a particular admission number using recursive technique and return 1 if found otherwise return -1",
       "solution": "data/programSolutions/14.txt"
+    },{
+      "id": 15,
+      "years":[2015],
+      "img": "15.jpg",
+      "name": "A class Merger concatetnates two positive integers that are greater than 0 and produces a new merged integer.\\nExample: If the first number is 23 and the second number is 764, then the concatenated number will be 23764.",
+      "solution": "data/programSolutions/15.txt"
     }
   ]
   

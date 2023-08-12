@@ -1,0 +1,25 @@
+import java.util.Scanner;
+class Merger {
+    long n1, n2, mergNum;       // global variables
+    Merger() {
+        n1 = n2 = mergNum = 0;      // initializing the variables to their default values
+    }
+    void readNum() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the two numbers: ");
+        n1 = sc.nextLong();      // acceping the two numbers
+        n2 = sc.nextLong();      // as long
+    }
+    void JoinNum() {
+        mergNum = Long.parseLong(""+n1+n2);     // concatenating n1 and n2 and converting them to long
+    }
+    void show() {   // to print the original as well as the concatenated numbers.
+        System.out.println("1st Number: "+n1+"\n2nd Number: "+n2+"\nConcatenated Number: "+mergNum);
+    }
+    public static void main(String[]args) {
+        Merger obj = new Merger();      // creating the object of the class
+        obj.readNum();      // calling the function to accepting the numbers from the user
+        obj.JoinNum();      // to concatenate the two numbers
+        obj.show();     // to display the original as well as the new number
+    }
+}
