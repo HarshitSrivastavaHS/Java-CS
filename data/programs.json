@@ -100,6 +100,12 @@
       "img": "15.jpg",
       "name": "A class Merger concatenates two positive integers that are greater than 0 and produces a new merged integer.\\nExample: If the first number is 23 and the second number is 764, then the concatenated number will be 23764.",
       "solution": "data/programSolutions/15.txt"
+    },{
+      "id": 16,
+      "years":[],
+      "img": "16.jpg",
+      "name": "Design a class Prime_Factors to accept an array and display the prime factors of each number in the array.",
+      "solution": "data/programSolutions/16.txt"
     }
   ]
   

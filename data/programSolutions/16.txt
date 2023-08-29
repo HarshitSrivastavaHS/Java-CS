@@ -1,0 +1,38 @@
+import java.util.Scanner;
+class Prime_Factors {
+    long arr[];     // array to store the numbers
+    int s;          // size of the array
+    Prime_Factors(int lim) {        // parameterized constructor
+        s = lim;
+        arr = new long[lim];        // initialising the array.
+    }
+    void FillArray() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the elements of the array: ");
+        for (int i = 0; i<s; i++)
+            arr[i] = sc.nextLong();     // accepting input in the array.
+    }
+    void show_PrimeFacts() {
+        for (int i = 0; i<s; i++) {     // to extract numbers from the array.
+            long num = arr[i];
+            System.out.print("INPUT: "+num+"\tOUTPUT: ");
+            for (long copy = num, j = 2; j<=num;) {     // to find the prime factors of num
+                if (copy%j==0) {
+                    copy/=j;
+                    System.out.print(j+" ");        // printing the prime factor
+                }
+                else {
+                    j++;
+                }
+            }
+            System.out.println();
+        }
+    }
+    public static void main(String[]args) {     // main method to create the object and run.
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the size of the array: ");
+        Prime_Factors obj = new Prime_Factors(sc.nextInt());
+        obj.FillArray();
+        obj.show_PrimeFacts();
+    }
+}
