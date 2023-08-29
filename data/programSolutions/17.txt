@@ -1,0 +1,48 @@
+import java.util.Scanner;
+public class M2 {
+    int M;      // the size of the matrix
+    char first, second, third, ar[][];      // the 3 characters + the matrix
+    M2() {
+        M = 0;      // default initialisation
+        first = second = third = ' ';
+    }
+    void input() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the size of the matrix: ");
+        M = sc.nextInt();       // to get the size of the matrix
+        if (M<=3) {     // The program exits if the size is less than equal to 3
+            System.out.println("The size cannot be less than 4");
+            System.exit(0);
+        }
+        ar = new char[M][M];        // initializing the matrix
+        System.out.print("Enter the three characters: ");       // inputting the three characters
+        first = sc.next().charAt(0);
+        second = sc.next().charAt(0);
+        third = sc.next().charAt(0);
+    }
+    void fill () {      // filling the matrix 
+        for (int i = 0; i<M; i++) {
+            for (int j = 0; j<M; j++) {
+                if ((i==0||i==M-1)&&(j==0||j==M-1))     // 4 corners get the 1st character
+                    ar[i][j] = first;
+                else if (i == 0 || j == 0 || i == M-1 || j== M-1)       // remaining boundary elements get the 2nd character
+                    ar[i][j] = second;
+                else    // all the other elements gets the 3rd character
+                    ar[i][j] = third;
+            }
+        }
+    }
+    void show() {       // displaying the matrix
+        for (int i = 0; i<M; i++) {
+            for (int j = 0; j<M; j++) 
+                System.out.print(ar[i][j]+"\t");
+            System.out.println();
+        }
+    }
+    public static void main(String[]args) {
+        M2 obj = new M2();      // creating the object
+        obj.input();
+        obj.fill();
+        obj.show();
+    }
+}

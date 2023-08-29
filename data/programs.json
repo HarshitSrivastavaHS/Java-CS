@@ -107,5 +107,12 @@
       "name": "Design a class Prime_Factors to accept an array and display the prime factors of each number in the array.",
       "solution": "data/programSolutions/16.txt"
     }
+    ,{
+      "id": 17,
+      "years":[],
+      "img": "17.png",
+      "name": "Design a class to accept three characters and store them in the matrix. \\nFirst Character: 4 corners\\nSecond Character: Boundary Elements except those corners\\nThird Character: Remaining Elements",
+      "solution": "data/programSolutions/17.txt"
+    }
   ]
   
