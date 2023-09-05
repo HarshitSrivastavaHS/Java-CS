@@ -113,6 +113,12 @@
       "img": "17.png",
       "name": "Design a class to accept three characters and store them in the matrix. \\nFirst Character: 4 corners\\nSecond Character: Boundary Elements except those corners\\nThird Character: Remaining Elements",
       "solution": "data/programSolutions/17.txt"
+    },{
+      "id": 18,
+      "years":[],
+      "img": "18.jpg",
+      "name": "Write a program to compute and store the sum of elements of each row and sum of elements of each column in their respective row and column in the matrix.",
+      "solution": "data/programSolutions/18.txt"
     }
   ]
   

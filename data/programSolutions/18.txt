@@ -1,0 +1,47 @@
+import java.util.Scanner;
+class sum_matrix {
+    int arr[][];    // array to store the matrix
+    int rn, cn;     // size of the matrix
+    sum_matrix() {
+        rn = cn = 0;        // initializing with default value of 0;
+    }
+    void readRowColumn(int nx, int ny) {
+        rn = nx;
+        cn = ny;
+        arr = new int[nx+1][ny+1];      // creating an array with a +1 size to store the sum of the elements in rows and columns
+        if (rn>20 || cn > 20) {
+            System.out.println("Max Matrix size: 20x20");
+            System.exit(0);     // end of execution if matrix is greater than 21x21 (including the sum)
+        }
+    }
+    void readMat() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the elements of the matrix:");
+        for (int i = 0; i<rn; i++)
+            for (int j = 0; j<cn; j++)
+                arr[i][j] = sc.nextInt();       // accepting the input
+    }
+    void showMat() {
+        for (int i = 0; i<=rn; i++) {
+            for (int j = 0; j<=cn; j++)
+                System.out.print((!(i==rn&&j==cn)?arr[i][j]:"")+"\t");      // printing the matrix except the last element. In a 5x4 matrix, element at (4,3) will not be printed
+            System.out.println();
+        }
+    }
+    void sumMat() {
+        for (int i = 0; i<rn; i++) 
+            for (int j = 0; j<cn; j++) {
+                arr[i][cn] += arr[i][j];    // calculating the sum of the row
+                arr[rn][j] += arr[i][j];    // calculating the sum of the column
+            }
+    }
+    public static void main(String[]args) {     // main method
+        Scanner sc = new Scanner(System.in);
+        sum_matrix obj = new sum_matrix();
+        System.out.print("Enter the size of the matrix:");
+        obj.readRowColumn(sc.nextInt(), sc.nextInt());
+        obj.readMat();
+        obj.sumMat();
+        obj.showMat();
+    }
+}
