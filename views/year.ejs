@@ -7,7 +7,7 @@
   <body>
     <%- include('navbar') %>
     <div class="mx-auto my-4" style="width: 85%">
-      <h4>Programs asked in the year <%- year %></h4>
+      <h4>Programs asked in the year <%- year %> (<%- ID.length%>)</h4>
       <ul class="list-group mx-auto">
          <% ID.map((id, index)=>{
             let program = programs.find((program)=>program.id==id); %>
