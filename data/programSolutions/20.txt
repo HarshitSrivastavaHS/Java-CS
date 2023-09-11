@@ -1,0 +1,51 @@
+import java.util.Scanner;
+public class PrimePalindrome {
+    int m, n;   // global varaibles to store the limits
+    PrimePalindrome() {
+        m = n = 0;      // default initialization
+    }
+    void acceptRange() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the lower limit and upper limit: ");
+        m = sc.nextInt();       // accepting the lower limit;
+        n = sc.nextInt();       // accepting the upper limit
+        if (m<0||n<0) {     // if either of the limit is negative
+            System.out.println("The limits have to be positive. Exiting...");
+            System.exit(0);
+        }
+        if (m>3000 || n>3000) {     // if either of the limit is greater than 3k
+            System.out.println("The limits have to be less than 3k. Exiting...");
+            System.exit(0);
+        }
+    }
+    boolean isPrime(int x) {
+        for (int i = 2; i<x/2; i++)
+            if (x%i==0)     // if a number (other than 1 and the x) is a factor, it's not a prime number
+                return false;
+        return true;        // otherwise it is prime
+    }
+    int reverse(int x) {        // calculating the reverse of x
+        int rev = 0;
+        while (x!=0) {
+            rev = rev*10 + x%10;
+            x/=10;
+        }
+        return rev;
+    }
+    void printPalindrome() {    
+        acceptRange();      // calling acceptRange() to get m and n;
+        int c = 0;      // frequency variable
+        System.out.println("Prime Palindrome Integers: ");
+        for (int i = m; i<=n; i++) {        
+            if (isPrime(i) && i==reverse(i)) {      // printing prime palindromes between m and n
+                System.out.println(i);
+                c++;        // incrementing the counter
+            }
+        }   
+        System.out.println("Frequency of Prime Palindrome Integers: "+c);       // printing the counter
+    }
+    public static void main(String[]args) {     // main method
+        PrimePalindrome obj = new PrimePalindrome();
+        obj.printPalindrome();
+    }
+} 

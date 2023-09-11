@@ -125,6 +125,12 @@
       "img": "19.jpg",
       "name": "Write a program to accept a matrix from the user and rotate it 90° clockwise. Display the original as well as the rotated matrix. Also display the sum of the corner elements.",
       "solution": "data/programSolutions/19.txt"
+    },{
+      "id": 20,
+      "years":[2012],
+      "img": "20.jpg",
+      "name": "Write a program to accept two numbers m and n and print all the prime palindromes number between m and n. Also print the frequency of prime palindromes.",
+      "solution": "data/programSolutions/20.txt"
     }
   ]
   
