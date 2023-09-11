@@ -119,6 +119,12 @@
       "img": "18.jpg",
       "name": "Write a program to compute and store the sum of elements of each row and sum of elements of each column in their respective row and column in the matrix.",
       "solution": "data/programSolutions/18.txt"
+    },{
+      "id": 19,
+      "years":[2015],
+      "img": "19.jpg",
+      "name": "Write a program to accept a matrix from the user and rotate it 90° clockwise. Display the original as well as the rotated matrix. Also display the sum of the corner elements.",
+      "solution": "data/programSolutions/19.txt"
     }
   ]
   
