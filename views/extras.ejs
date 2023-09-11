@@ -9,7 +9,7 @@
     <div class="mx-auto my-4" style="width: 85%">
       <h4>Extra Programs <%- `(${extra.length})` %></h4>
       <ul class="list-group mx-auto">
-         <% extra.map((program, index)=>{ 
+         <% [...extra].reverse().map((program, index)=>{ 
             program = programs.find((programData)=>programData.id == program);%>
             <a class="link-dark text-decoration-none" href="/program/<%=program.id%>">
             <li class="list-group-item d-flex justify-content-between align-items-center  <%- index%2==0?'bg-body-tertiary':''%>">
@@ -21,7 +21,6 @@
       </ul>
     </div>
     <ul>
-       
     </ul>
   </body>
 </html>
