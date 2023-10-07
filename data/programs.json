@@ -131,6 +131,12 @@
       "img": "20.jpg",
       "name": "Write a program to accept two numbers m and n and print all the prime palindromes number between m and n. Also print the frequency of prime palindromes.",
       "solution": "data/programSolutions/20.txt"
+    },{
+      "id": 21,
+      "years":[],
+      "img": "21.png",
+      "name": "A class Composite contains a two dimensional array of order [m × n]. The maxium values possible for both 'm' and 'n' is 20. Disign a class Composite to fill the array with the first (m × n) composite numbers in column wise.",
+      "solution": "data/programSolutions/21.txt"
     }
   ]
   

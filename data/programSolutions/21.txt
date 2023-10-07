@@ -1,0 +1,45 @@
+import java.util.Scanner;
+class Composite {
+    int arr[][], m, n;      // declaring global variables 
+    Composite(int mm, int nn) {
+        m = mm;
+        n = nn;
+        arr = new int[m][n];    // initializing the matrix
+    }
+    int isComposite(int p) {
+        for (int i = 2; i<p; i++)
+            if (p%i==0)
+                return 1;       // if p has a factor other than 1 or p, it returns 1 (meaning it is composite)
+        return 0;       // else it is not composite
+    }
+    void fill() {
+        int composite = 1;      // variable to track the composite numbers
+        for (int col = 0; col<n; col++) {       // loop for the columns     
+            for (int row = 0; row<m; row++) {       // loop for the rows
+                for (int i = composite; isComposite(i)==0; i++)     // to check if the value in variable "composite" is composite or not, if not, it changes it with the greater composite number
+                    composite = i+1;
+                arr[row][col] = composite++;    // filling the matrix with composite numbers column wise
+            }
+        }
+    }
+    void display() {        // to display the matrix the usual way
+        for (int i = 0; i<m; i++) {
+            for (int j = 0; j<n; j++) {
+                System.out.print(arr[i][j]+"\t");
+            }
+            System.out.println();
+        }
+    }
+    public static void main(String[]args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number of rows and columns of the matrix: ");
+        int r = sc.nextInt(), c = sc.nextInt();     // acccepting the rows and columns from the user
+        if (r>20||c>20) {       // if r or c is greater than 20, the program exits with a message
+            System.out.println("Maximum possible value of the number of rows and columns is 20. Exiting...");
+            System.exit(0);
+        }
+        Composite obj = new Composite(r, c);        // creating the object
+        obj.fill();     
+        obj.display();
+    }
+}
