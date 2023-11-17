@@ -1,0 +1,33 @@
+import java.util.Scanner;
+import java.util.StringTokenizer;
+class SnowBall {
+    String sen;     // Declaring the global variables.
+    SnowBall(String s) {
+        sen = s;        // Parameterized Constructor.
+    }
+    boolean check(String w, int c) {        // checking if the size of the word is equal to the predicted word size.
+        w = w.endsWith(".")||w.endsWith("?")?w.substring(0,w.length()-1):w;
+        return w.length() == c;
+    }
+    void check() {
+        StringTokenizer st = new StringTokenizer(sen);      // Breaking the sentence into tokens/words separated by ' '
+        int c = st.nextToken().length();        // The length of the 1st word in the sentence.
+        boolean f = true;       // the sentence is a snowball sentece (true by default)
+        while (st.hasMoreTokens()&&f)       // if there are more words and the flag is true.
+            if (!check(st.nextToken(), ++c))    // if the length of the succeeding word does not match with the predicted length
+                f = false;      
+        System.out.println(sen+" is "+(f?"":"not ")+"a snowball sentence.");
+    }
+    public static void main(String[]args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the sentence: ");
+        String s = sc.nextLine();
+        if (s.endsWith(".")||s.endsWith("?")) {     // if the sentence ends with . or ? the program works
+            SnowBall obj = new SnowBall(s);
+            obj.check();
+        }
+        else  {
+            System.out.println("Invalid sentence.");        // else it exits.
+        }
+    }
+}

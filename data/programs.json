@@ -149,6 +149,12 @@
       "img": null,
       "name": "Write a program to accept a matrix and print the saddle points present in the matrix. It is an element which is largest in its column and smallest in its row.",
       "solution": "data/programSolutions/23.txt"
+    },{
+      "id": 24,
+      "years":[],
+      "img": null,
+      "name": "Write a program to check is a sentence is a SnowBall sentence or not.\\nA snowball sentence is a sentence in which each succeeding word’s size increase by 1 only.\\nExample: Hello world – not a snowball sentence\\nI am the lord – snowball sentence",
+      "solution": "data/programSolutions/24.txt"
     }
   ]
   
