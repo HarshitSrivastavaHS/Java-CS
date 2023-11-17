@@ -1,0 +1,61 @@
+class VampireNumber {
+    boolean composite(int n) {      // to check if n is composite or not
+        for (int i = 2; i<=n/2; i++) 
+            if (n%i==0)
+                return true;
+        return false;
+    }
+    int digits(int n) {     // to count the number of digits in n
+        int c = 0;
+        while (n!=0) {
+            n/=10;
+            c++;
+        }
+        return c;
+    }
+    boolean check(int f1, int f2, int n) {
+        String num = n+"";
+        String fact = f1+""+f2;     // concatenation of both the factors to check all the digits.
+        int l = digits(n);
+        boolean flag = true;
+        for (char i = '0'; i<='9';i++ ){    // checking the all digits.
+            int c = 0;      // counter to count the frequency of the digits.
+            for (int j = 0; j<l; j++) {     
+                if (num.charAt(j)==i)       // if num has i, increase c by 1
+                    c++;
+            }
+            for (int j = 0; j<l; j++) {     // if factors has i, decrease c by 1
+                if (fact.charAt(j)==i)
+                    c--;
+            }
+            if (c!=0) {     // if c comes out not to be 0 (does not occur the same number of time in both num and factors)
+                flag = false;       // set flag to false
+                break;
+            }
+        }
+        return flag;
+    }
+    void factors(int n) {
+        int l = digits(n);      // getting the size of n
+        if (l%2==1 || !composite(n))        // if l is odd or prime
+            return;
+        for (int i = 1; i<=n/2; i++) {      // finding the factors
+            if (n%i==0) {       // if i is a factor of n
+                int f1 = i, f1d = digits(f1);       // storing i in f1 and its length in f1d
+                int f2 = n/i, f2d = digits(f2);     // storing the factor n/i in f2 and its length in f2d
+                if (f1d == f2d && f2d == l/2 && check(f1, f2, n) && !(f1%10 == 0 && f2 == 0)) {     // if f1d and f2d are half the length of n and f1 and f2 contains all the digits of n and in the same number and not both end in trailing zeroes
+                    System.out.println(n +" -> "+f1+" * "+f2);
+                    break;
+                }
+            }
+        }
+    }
+    void process() {
+        for (int i = 1; i<10000; i++)       // checking all the numbers from 1 to 10000
+            factors(i);
+    }
+    public static void main(String[]args) {
+        VampireNumber obj = new VampireNumber();
+        obj.process();
+    }
+}

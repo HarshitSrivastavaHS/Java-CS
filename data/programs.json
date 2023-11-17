@@ -137,6 +137,12 @@
       "img": "21.png",
       "name": "A class Composite contains a two dimensional array of order [m × n]. The maxium values possible for both 'm' and 'n' is 20. Disign a class Composite to fill the array with the first (m × n) composite numbers in column wise.",
       "solution": "data/programSolutions/21.txt"
+    },{
+      "id": 22,
+      "years":[],
+      "img": null,
+      "name": "Create a class VampireNumber to display all the vampire numbers between 1 and 10000. A number is a vampire number is a composite Natural Number with even number of digits and can be factored into two integers with half of the digits of the original number and not both with trailing zeroes. The original number should contain all the digits from both the factors.",
+      "solution": "data/programSolutions/22.txt"
     }
   ]
   
