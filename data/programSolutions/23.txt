@@ -1,0 +1,52 @@
+import java.util.Scanner;
+class SaddlePoint {
+    int ar[][], r, c;       // declaring global variables
+    SaddlePoint() {     // default constructor
+        r = c = 0;      
+    }    
+    void input() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the size of the matrix: ");
+        r = sc.nextInt();       // to store the number of rows in the matrix
+        c = sc.nextInt();       // to store the number of columns in the matrix
+        ar = new int[r][c];     // inititalising the matrix
+        System.out.println("Enter the elements of the matrix: ");
+        for (int i = 0; i<r; i++)       // to accept each element of the matrix
+            for (int j = 0; j<c; j++)
+                ar[i][j] = sc.nextInt();
+        sc.close();
+    }
+    void display() {        // to display the matrix on the screen
+        System.out.println("The Matrix: ");
+        for (int i = 0; i<r; i++) {
+            for (int j = 0; j<c; j++)
+                System.out.print(ar[i][j]+"\t");
+            System.out.println();
+        }
+    }
+    void printSaddle() {
+        boolean found = false;      // flag to check if saddle point is found.
+        for (int i = 0; i<r; i++) {
+            for (int j = 0; j<c; j++) {
+                int largest = ar[i][j];  // largest element in the column
+                for (int row = 0; row<r; row++)
+                    largest = Math.max(largest, ar[row][j]);
+                int smallest = ar[i][j];        // smallest element in the row
+                for (int col = 0; col<c; col++) 
+                    smallest = Math.min(smallest, ar[i][col]);
+                if (largest == smallest && largest == ar[i][j]) {       
+                    System.out.println("Saddle Point: ("+i+","+j+") --> "+ar[i][j]);    // printing the saddle point
+                    found = true;
+                }
+            }
+        }
+        if (!found)     // if there was no saddle point
+            System.out.println("No Saddle Point found.");
+    }
+    public static void main(String[]args) {
+        SaddlePoint obj = new SaddlePoint();
+        obj.input();
+        obj.display();
+        obj.printSaddle();
+    }
+}

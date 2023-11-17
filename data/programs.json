@@ -143,6 +143,12 @@
       "img": null,
       "name": "Create a class VampireNumber to display all the vampire numbers between 1 and 10000. A number is a vampire number is a composite Natural Number with even number of digits and can be factored into two integers with half of the digits of the original number and not both with trailing zeroes. The original number should contain all the digits from both the factors.",
       "solution": "data/programSolutions/22.txt"
+    },{
+      "id": 23,
+      "years":[],
+      "img": null,
+      "name": "Write a program to accept a matrix and print the saddle points present in the matrix. It is an element which is largest in its column and smallest in its row.",
+      "solution": "data/programSolutions/23.txt"
     }
   ]
   
