@@ -155,6 +155,12 @@
       "img": null,
       "name": "Write a program to check is a sentence is a SnowBall sentence or not.\\nA snowball sentence is a sentence in which each succeeding word’s size increase by 1 only.\\nExample: Hello world – not a snowball sentence\\nI am the lord – snowball sentence",
       "solution": "data/programSolutions/24.txt"
+    },{
+      "id": 25,
+      "years":[],
+      "img": null,
+      "name": "Design a class to generate a spiral matrix of natural numbers starting from 1 to n.",
+      "solution": "data/programSolutions/25.txt"
     }
   ]
   
