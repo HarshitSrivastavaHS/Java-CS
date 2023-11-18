@@ -179,6 +179,12 @@
       "img": null,
       "name": "Write a program to accept any posite integer and check if it is a Hamming number or not. Hamming numbers are positive integer numbers whose prime factors include 2, 3 and 5 only.",
       "solution": "data/programSolutions/28.txt"
+    },{
+      "id": 29,
+      "years":[],
+      "img": null,
+      "name": "Lucky Numbers are a sequence of natural numbers that remain after removing second, third, fourth, fifth and so on numbers respectively from a sequence of consecutive natural numbers. Write a program to enter any positive natural number 'N' where (1<=N<=50) and generate lucky numbers less than the given natural number.",
+      "solution": "data/programSolutions/29.txt"
     }
   ]
   
