@@ -1,0 +1,34 @@
+import java.util.Scanner;       // importing Scanner class
+class HammingNumber {       // start of the class
+    int num;        // declaring the global variable to store the number
+    HammingNumber(int n) {      // parameterized constructor
+        num = n;
+    }
+    void display() {
+        String out = num +" = ";        // to store the output string of: Num = fact x fact x ...
+        boolean flag = true;        // flag variable
+        for (int i = 2, copy = num; i<=copy; ) {    // to get the prime factors
+            if (copy%i==0){     // if i is a factor of num
+                out += i+"x";       // adding the factor to output
+                copy/=i;
+                if (i>5)        // if i is great than 5, then it is not a hamming number.
+                    flag = false;
+            }
+            else        // is num is not divisible by prime factor i
+                i++;
+        }
+        System.out.println(out.substring(0, out.lastIndexOf('x')));     // printing output string 
+        System.out.println(num + " is"+(flag?"":" not")+" a Hamming number.");      // printing if it is a hamming number or not.
+    }
+    public static void main(String[]args) {     // start of main method
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number: ");
+        int n = sc.nextInt();
+        if (n<0) {      // program exits if it is a negative number.
+            System.out.println("Invalid entry");
+            System.exit(0);
+        }
+        HammingNumber obj = new HammingNumber(n);
+        obj.display();
+    }       // end of main method
+}       // end of class

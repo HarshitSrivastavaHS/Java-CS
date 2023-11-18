@@ -173,6 +173,12 @@
       "img": null,
       "name": "Write a program to accept day number (between 1 and 366) and year (yyyy) from the user and display the corresponding date. Also accept 'N' from the user where (1<=N<=100) to compute and display the future date 'N' days after the given date. Display error message if the value of the day number or 'N' are not within the limit. Day number is calculated using 1st January of the given year as 1.",
       "solution": "data/programSolutions/27.txt"
+    },{
+      "id": 28,
+      "years":[],
+      "img": null,
+      "name": "Write a program to accept any posite integer and check if it is a Hamming number or not. Hamming numbers are positive integer numbers whose prime factors include 2, 3 and 5 only.",
+      "solution": "data/programSolutions/28.txt"
     }
   ]
   
