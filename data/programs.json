@@ -161,6 +161,12 @@
       "img": null,
       "name": "Design a class to generate a spiral matrix of natural numbers starting from 1 to n.",
       "solution": "data/programSolutions/25.txt"
+    },{
+      "id": 26,
+      "years":[],
+      "img": null,
+      "name": "Write a program to check if the given square matrix is doubly markov matrix or not. A doubly markov matrix is the one which satisfies the following conditions:\\n(i)All elements are greater than or equal to 0.\\n(ii) Sum of each row is equal to 1.\\n(iii) Sum of each column is equal to 1.",
+      "solution": "data/programSolutions/26.txt"
     }
   ]
   

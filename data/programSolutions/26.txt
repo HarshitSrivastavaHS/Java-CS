@@ -1,0 +1,66 @@
+import java.util.Scanner;
+class DoublyMarkovMatrix {      // start of class
+    double M[][];
+    int N;       // declaring global variables.
+    DoublyMarkovMatrix() {      // default constructor
+        N = 0;
+        M = new double[N][N];
+    }
+    void input() {      // to accept N and elements of M from the user.
+        Scanner sc = new Scanner(System.in);
+        System.out.print("N=");
+        N = sc.nextInt();       // storing the value of N;
+        if (!(N>=3&&N<=9)) {    // if N<3 or N>9
+            System.out.println("Size is out of range. Invalid entry.");
+            System.exit(0);     // program exits
+        }
+        M = new double[N][N];
+        System.out.print("Enter elements in the matrix: ");
+        for (int i = 0; i<N; i++)
+            for (int j = 0; j<N; j++) {
+                M[i][j] = sc.nextDouble();
+                if (M[i][j]<0) {
+                    System.out.println("Negative numbers entered. Invalid entry.");
+                    System.exit(0);
+                }
+            }
+    }
+    boolean check() {
+        boolean flag = true;        // to store if the matrix is doubly markov
+        for (int i = 0; i<N; i++) {     // to calculate the sum of each row
+            double sum = 0;
+            for (int j = 0; j<N; j++) {
+                sum+= M[i][j];
+            }
+            if (sum!=1) {       // if sum is not equal to 1
+                flag = false;
+                break;
+            }
+        }
+        for (int j = 0; flag&&j<N; j++) {       // to calculate the sum of each column
+            double sum = 0;
+            for (int i = 0; i<N; i++) {
+                sum+= M[i][j];
+            }
+            if (sum!=1) {       // if not equal to 1
+                flag = false;
+                break;
+            }
+        }   
+        return flag;        // returning the flag
+    }
+    void display() {
+        System.out.println("Formed Matrix: ");
+        for (int i = 0; i<N; i++) {     // looping through each row
+            for (int j = 0; j<N; j++)       // looping through the columns of a row
+                System.out.print(M[i][j]+"\t");     // printing the elements
+            System.out.println();
+        }
+        System.out.println("It is "+(check()?"":"not ")+"a Doubly Markov Matrix.");     // printing if it is a doubly markov matrix of not.
+    }
+    public static void main(String[]args) {     // start of main method
+        DoublyMarkovMatrix obj = new DoublyMarkovMatrix();
+        obj.input();
+        obj.display();
+    }       // end of main method
+}       // end of class
