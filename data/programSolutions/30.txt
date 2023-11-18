@@ -1,0 +1,33 @@
+import java.util.Scanner;       // importing Scanner
+class KeywordCiper {        // start of class
+    String key, code;       // global variables
+    KeywordCiper(String keyword, String code) {     // parameterized constructor
+        key = keyword;
+        this.code = code;
+    }
+    void decode() {
+        String plain = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";        // plain text for decoding
+        String key = "";        // to store the encrypted text
+        for (int i = 0; i<this.key.length(); i++)   // to store each letter from the keyword to the key
+            if (Character.isLetter(this.key.charAt(i))&&key.indexOf(this.key.charAt(i))==-1)
+                key+= this.key.charAt(i);
+        for (int i = 0; i<plain.length(); i++)      // then to add the remaining letters to the key
+            if (key.indexOf(plain.charAt(i))==-1)
+                key+= plain.charAt(i);
+        String decoded = "";
+        for (int i = 0; i<code.length(); i++) {
+            char ch = code.charAt(i);
+            decoded += Character.isLetter(ch)?plain.charAt(key.indexOf(ch)):ch;     // replacing the encrypted character with plain character
+        }
+        System.out.println("Decoded Text: "+decoded);       // printing the decoded text
+    }
+    public static void main(String[]args) {     // start of main
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Keyword: ");
+        String key = sc.nextLine().toUpperCase();
+        System.out.print("Enter the text to be decoded: ");
+        String code = sc.nextLine().toUpperCase();
+        KeywordCiper obj = new KeywordCiper(key, code);
+        obj.decode();
+    }   // end of main
+}       // end of class

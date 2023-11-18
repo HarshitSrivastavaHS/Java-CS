@@ -185,6 +185,12 @@
       "img": null,
       "name": "Lucky Numbers are a sequence of natural numbers that remain after removing second, third, fourth, fifth and so on numbers respectively from a sequence of consecutive natural numbers. Write a program to enter any positive natural number 'N' where (1<=N<=50) and generate lucky numbers less than the given natural number.",
       "solution": "data/programSolutions/29.txt"
+    },{
+      "id": 30,
+      "years":[],
+      "img": null,
+      "name": "Write a program to accept a coded text in uppercase and a keyword. Using the keyword ciper technique decrypt the text and display. \\nKeyword ciper is a form of encryption technique. A keyword is used as the key, and it determines the letter matching the ciper alphabet to the plain alphabet. Repeats of letters in the word are removed, then the ciper alphabet is generated with the keywrd matching to A, B, C etc. until the keyword is used up. whereupn the rest of the ciper text letters are used in alphabetical order, excluding those already used in the key.\\nExample:\\nKey: KRYPTOS\\nPlaintext: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z\\nEncrypted: K R Y P T O S A B C D E F G H I J L M J Q U V W X Z",
+      "solution": "data/programSolutions/30.txt"
     }
   ]
   
