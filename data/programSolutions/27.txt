@@ -1,0 +1,62 @@
+import java.util.Scanner;
+class DayDate {     // start of class
+    int dayNumber, year, N;     // declaring global variables
+    DayDate() {     // default Constructor
+        dayNumber = year = N = 0;       // initialising
+    }
+    void input() {      // to accept input from the user.
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Day Number: ");
+        dayNumber = sc.nextInt();
+        System.out.print("Year: ");
+        year = sc.nextInt();
+        System.out.print("N: ");
+        N = sc.nextInt();
+        boolean err =  false;   // varaible to check if any input is invalid
+        if (dayNumber<1||dayNumber>366) {
+            System.out.println("Incorrect Day Number.");
+            err = true;
+        }
+        if (year<1) {
+            System.out.println("Incorrect year");
+            err = true;
+        }
+        if (N<1||N>100) {
+            System.out.println("Incorrect Value of 'N'");
+            err = true;
+        }
+        if (err)       // if invalid, program exits
+            System.exit(0);
+    }
+
+    String getDate(int number, int year) {
+        if (number>366) {       // if 'number' (dayNumber) is greater than 366
+            number-=366;        // it's changed to number-366 
+            year++;             // and 1 is incremented to the year (to change the year)
+        }
+        String date = ", "+year;    // Last part of the date (Example: year = 2024, ", 2024")
+        // arays storing the name of the months and number of days in each months respectively 
+        String months[] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}; 
+        int days[] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        for (int i = 0; i<12; i++) {    // looping through each month
+            if (number<=days[i]) {      // if number is smaller than the number of days in the current month
+                date = months[i]+" "+number+date;       // then the date is updated
+                break;
+            }
+            else
+                number-=days[i];    // number of days in that month is subtracted from 'number' before the next iteration.
+        }
+        return date;
+    }
+
+    void process() {
+        System.out.println("Entered Date: "+getDate(dayNumber, year));      // Printing the entered date
+        System.out.println(N+" Days Later: "+getDate(dayNumber + N, year));     // Printing the date after N days
+    }
+
+    public static void main(String[]args) { // start of main method
+        DayDate obj = new DayDate();
+        obj.input();
+        obj.process();
+    }   // end of main method
+}   // end of class

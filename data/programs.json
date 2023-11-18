@@ -167,6 +167,12 @@
       "img": null,
       "name": "Write a program to check if the given square matrix is doubly markov matrix or not. A doubly markov matrix is the one which satisfies the following conditions:\\n(i)All elements are greater than or equal to 0.\\n(ii) Sum of each row is equal to 1.\\n(iii) Sum of each column is equal to 1.",
       "solution": "data/programSolutions/26.txt"
+    },{
+      "id": 27,
+      "years":[],
+      "img": null,
+      "name": "Write a program to accept day number (between 1 and 366) and year (yyyy) from the user and display the corresponding date. Also accept 'N' from the user where (1<=N<=100) to compute and display the future date 'N' days after the given date. Display error message if the value of the day number or 'N' are not within the limit. Day number is calculated using 1st January of the given year as 1.",
+      "solution": "data/programSolutions/27.txt"
     }
   ]
   
