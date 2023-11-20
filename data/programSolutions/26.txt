@@ -15,15 +15,19 @@ class DoublyMarkovMatrix {      // start of class
             System.exit(0);     // program exits
         }
         M = new double[N][N];
+        boolean f = false;
         System.out.print("Enter elements in the matrix: ");
         for (int i = 0; i<N; i++)
             for (int j = 0; j<N; j++) {
                 M[i][j] = sc.nextDouble();
                 if (M[i][j]<0) {
-                    System.out.println("Negative numbers entered. Invalid entry.");
-                    System.exit(0);
+                    f = true;
                 }
             }
+        if (f) {
+            System.out.println("Negative numbers entered. Invalid entry.");
+            System.exit(0);
+        }
     }
     boolean check() {
         boolean flag = true;        // to store if the matrix is doubly markov
